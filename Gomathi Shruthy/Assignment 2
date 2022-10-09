@@ -1,9 +1,0 @@
-import random
-while(True):
-p=random.randint(10,99)
-q=random.randint(10,99)
-if(p>45 and q>70):
-print ("high temprature and humidity of:",p,q,"%","alarm is on")
-elif(p<45 and q<70):
-print("NormaI temprature and humidity of:",p,q,"%","alarm is off")
-break
