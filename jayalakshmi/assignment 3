@@ -1,0 +1,36 @@
+Python Code: 
+Import RPi.GPIO as GPIO 
+Import time 
+  
+Try: 
+ Def lightTraffic(led1, led2, led3, delay ): 
+ GPIO.output(led1, 1) 
+ Time.sleep(delay) 
+ GPIO.output(led1, 0) 
+ GPIO.output(led2, 1) 
+ Time.sleep(delay)
+ GPIO.output(led2, 0) 
+ GPIO.output(led3, 1)  
+ Time.sleep(delay) 
+ GPIO.output(led3, 0)  
+ GPIO.setmode(GPIO.BCM) 
+ Button = 19 
+ GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_UP)  ledGreen = 16 
+ ledYellow = 12 
+ ledRed = 23 
+ GPIO.setup(ledGreen, GPIO.OUT) 
+ GPIO.setup(ledYellow, GPIO.OUT) 
+ GPIO.setup(ledRed, GPIO.OUT) 
+ While True: 
+ Input_state = GPIO.input(button) 
+ If input_state == False: 
+ Print(‘Button Pressed’) 
+ lightTraffic(ledGreen, ledYellow, ledRed, 1) 
+ else:  
+ GPIO.output(ledGreen, 0) 
+ GPIO.output(ledYellow, 0) 
+ GPIO.output(ledRed, 0) 
+Except KeyboardInterrupt: 
+ Print “You’ve exited the program” 
+Finally:
+ GPIO.cleanup()
